@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ivan Cabrilo, CSC 170 Project 3</title>
+    <link rel="stylesheet" href="css/styles.css" />
+    <style>
+      /* Add this style for responsive images in the excerpts */
+      .excerpt img {
+        max-width: 30%;
+        height: auto;
+      }
+      .excerpt {
+        padding: 20px;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Header -->
+    <header>
+      <div class="x"><h1>Welcome to My Website</h1></div>
+    </header>
+
+    <!-- Navigation -->
+    <nav class="menu">
+      <ul>
+        <li><a href="index.html" class="is-current">Home</a></li>
+        <li><a href="ibasterds.html">Film1</a></li>
+        <li><a href="pulpfiction.html">Film2</a></li>
+        <li><a href="shawredemption.html">Film3</a></li>
+        <li><a href="shutterisland.html">Film4</a></li>
+      </ul>
+    </nav>
+
+    <section class="excerpts">
+      <div class="excerpt">
+        <h2>Inglourious Basterds</h2>
+        <p>
+          In 1941, SS-Standartenführer Hans Landa interrogates French farmer
+          Perrier LaPadite, suspecting that the LaPadites are hiding a Jewish
+          family, the Dreyfuses, under their floorboards. LaPadite confirms this
+          to spare his own family, and Landa has the hidden family shot, but
+          allows Shosanna Dreyfus to escape.[9] Three years later, U.S. Army
+          Lieutenant Aldo Raine recruits Jewish-American soldiers to the
+          "Basterds", a black ops commando unit instilling fear among Nazis in
+          occupied France by killing and scalping them.
+        </p>
+
+        <p><a href="ibasterds.html">Read more...</a></p>
+        <p>
+          <img src="images/IB2.webp" alt="Inglourious Basterds" />
+        </p>
+      </div>
+
+      <div class="excerpt">
+        <h2>Pulp Fiction</h2>
+        <p>
+          Narrative structure Pulp Fiction's narrative is told out of
+          chronological order and follows three main interrelated stories that
+          each have a different protagonist: Vincent Vega, a hitman; Butch
+          Coolidge, a prizefighter; and Jules Winnfield, Vincent's business
+          partner.[9] The film begins with a diner hold-up staged by a couple,
+          then begins to shift from one storyline to another before returning to
+          the diner for the conclusion. There are seven narrative sequences; the
+          three primary storylines are preceded by intertitles: "Prologue – The
+          Diner" (i) Prelude to "Vincent Vega and Marsellus Wallace's Wife"
+          "Vincent Vega and Marsellus Wallace's Wife" Prelude to "The Gold
+          Watch" (a – flashback, b – present) "The Gold Watch" "The Bonnie
+          Situation" "Epilogue – The Diner" (ii) If the seven sequences were
+          ordered chronologically, they would run: 4a, 2, 6, 1, 7, 3, 4b, 5.
+        </p>
+
+        <p><a href="pulpfiction.html">Read more...</a></p>
+        <p>
+          <img src="images/pulpfic.jpeg" alt="Pulp Fiction famous Scene" />
+        </p>
+      </div>
+
+      <!-- Excerpt for Film3 -->
+      <div class="excerpt">
+        <h2>Shawshank Redemption</h2>
+        <p>
+          In early 1947, Portland, Maine, banker Andy Dufresne arrives at
+          Shawshank State Prison to serve two consecutive life sentences for
+          murdering his wife and her lover. He is befriended by Ellis "Red"
+          Redding, a contraband smuggler serving a life sentence, who procures a
+          rock hammer and a large poster of Rita Hayworth for Andy. Assigned to
+          work in the prison laundry, Andy is frequently sexually assaulted by
+          prison gang "the Sisters" and their leader, Bogs Diamond. In 1949,
+          Andy overhears the captain of the guards, Byron Hadley, complaining
+          about being taxed on an inheritance and offers to help him shelter the
+          money legally.
+        </p>
+        <p><a href="shawredemption.html">Read more...</a></p>
+        <p>
+          <img src="images/SR1.webp" alt="The Shawshank Redemption" />
+        </p>
+      </div>
+
+      <!-- Excerpt for Film4 -->
+      <div class="excerpt">
+        <h2>Shutter Island</h2>
+        <p>
+          In 1954, U.S. Marshal Edward "Teddy" Daniels and his new partner Chuck
+          Aule travel to Ashecliffe Hospital for the criminally insane on
+          Shutter Island, Boston Harbor, to investigate the disappearance of
+          Rachel Solando, a patient of the hospital who had previously drowned
+          her three children.
+        </p>
+        <p><a href="shutterisland.html">Read more...</a></p>
+        <p>
+          <img src="images/SI1.jpeg" alt="Shutter Island" />
+        </p>
+      </div>
+    </section>
+
+    <!-- jQuery-Powered Slideshow -->
+    <div class="slideshow-container">
+      <!-- Slide 1 -->
+      <div class="slide" style="background-image: url('images/IB1.jpg')"></div>
+
+      <!-- Slide 2 -->
+      <div
+        class="slide"
+        style="background-image: url('images/pulpfic.jpeg')"
+      ></div>
+
+      <!-- Slide 3 -->
+      <div class="slide" style="background-image: url('images/SI1.jpeg')"></div>
+
+      <!-- Slide 4 -->
+      <div class="slide" style="background-image: url('images/SR1.webp')"></div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <script>
+      $(document).ready(function () {
+        // Array of image URLs for the slideshow
+        var images = [
+          "images/IB1.jpg",
+          "images/pulpfic.jpeg",
+          "images/SI1.jpeg",
+          "images/SR1.webp",
+        ];
+
+        var currentIndex = 0;
+
+        function showImage(index) {
+          // Update the src attribute of the slideshow container with the current image URL
+          $(".slideshow-container .slide").hide();
+          $(".slideshow-container .slide:eq(" + index + ")").show();
+        }
+
+        function nextImage() {
+          currentIndex = (currentIndex + 1) % images.length;
+          showImage(currentIndex);
+        }
+
+        // Set an interval to change images every 5 seconds
+        setInterval(nextImage, 5000);
+
+        // Initial display of the first image
+        showImage(currentIndex);
+      });
+    </script>
+
+    <!-- Footer -->
+    <footer>
+      <p>&copy; 2023 Ivan Cabrilo. All rights reserved.</p>
+    </footer>
+  </body>
+</html>

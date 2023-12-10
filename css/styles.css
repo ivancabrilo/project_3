@@ -1,0 +1,253 @@
+/* default browser styles */
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+table {
+  margin: 0;
+  padding: 0;
+}
+
+/* box model to all elements */
+body,
+h1,
+h2,
+h3,
+p,
+ul,
+table {
+  box-sizing: border-box;
+}
+/* body styles */
+body {
+  font-family: "Arial", sans-serif;
+  line-height: 1.6;
+  margin: 0;
+  padding: 0;
+  background-color: #f8f8f8;
+}
+
+/* center the content */
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+/* equal two-column layout */
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr;
+}
+
+/* Media query for a two-column layout (does not work on smaller screens as well) */
+@media screen and (min-width: 600px) {
+  .grid-container {
+    grid-template-columns: 2fr 1fr; /* Two-column layout with a larger main content area */
+    gap: 20px; /*  gap between columns */
+  }
+
+  .context {
+    background-color: #f8f8f8;
+    padding: 20px;
+  }
+}
+
+/* header design */
+header {
+  background-color: #333;
+  color: white;
+  text-align: right;
+  padding: 10px 0;
+
+  display: grid;
+  grid-template-columns: repeat(1, 1fr); /* Two columns in the header */
+
+  align-items: center; /* Center items vertically in the header */
+}
+
+.align-right-upper {
+  grid-column: 2; /*Place the element in the second column */
+  /*grid-row: 1; /* Place the element in the first row */
+  text-align: center;
+  margin-top: 0px;
+  margin-right: 10px;
+  margin-left: 50px;
+}
+/* Main section padding */
+main {
+  padding: 20px;
+}
+
+section {
+  margin-bottom: 30px;
+}
+
+/* overview section */
+section h2 {
+  color: #333;
+  border-bottom: 2px solid #333;
+  padding-bottom: 5px;
+}
+
+section p {
+  font-size: 16px;
+  line-height: 1.5;
+
+  text-align: justify;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+ul li {
+  background-color: #eee;
+  margin-bottom: 5px;
+  padding: 8px;
+}
+
+/* PS sectipn */
+section h3 {
+  color: #333;
+  border-bottom: 2px solid #333;
+  padding-bottom: 5px;
+}
+
+/* RaL section */
+section img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+  margin: 20px 0;
+}
+
+/* quotes table */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+table,
+th,
+td {
+  border: 1px solid #333;
+}
+
+th,
+td {
+  padding: 10px;
+  text-align: left;
+}
+
+/* summary design */
+section h4 {
+  color: #333;
+  border-bottom: 2px solid #333;
+  padding-bottom: 5px;
+}
+
+/* centering and desigining footer context */
+footer {
+  background-color: #333;
+  color: white;
+  text-align: center;
+  padding: 10px 0;
+}
+
+/* Footer design */
+footer ul {
+  list-style: none;
+  padding: 0;
+}
+
+footer ul li {
+  margin-bottom: 5px;
+}
+
+footer a {
+  color: gray;
+  text-decoration: none;
+}
+
+nav {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  position: fixed; /* Fix the nav to the viewport */
+  top: 0; /* Align top to the top of the viewport */
+  left: 0; /* Align left to the left of the viewport */
+  background-color: brown;
+  z-index: 1000; /* Ensure the navbar is above other content */
+
+  overflow: hidden;
+}
+
+nav ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  display: flex; /* Use flexbox to lay out items horizontally */
+}
+
+nav li {
+  margin: 0;
+  padding: 0;
+}
+
+nav li a {
+  text-decoration: none;
+  padding: 10px 15px;
+  display: block;
+  color: darkkhaki;
+  border: 1px solid transparent;
+  transform: scale(1); /* Initialize scale */
+  transition: transform 0.3s, color 0.3s, background-color 0.3s; /* Specify transitions */
+}
+
+nav li a:hover {
+  color: white;
+  background-color: darkolivegreen;
+  border: 3px solid darkslategray;
+  transform: scale(1.05); /* Increase scale slightly */
+}
+
+nav li a.is-current {
+  color: darkolivegreen;
+  background-color: rgb(227, 196, 138);
+  pointer-events: none;
+  cursor: default;
+}
+
+nav li a.is-current.adjust {
+  border: 3px solid rgb(227, 196, 138);
+}
+
+nav::after {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 3px;
+  background-color: black; /* This creates the black line at the bottom */
+  transition: bottom 0.3s; /* Animate the bottom property */
+}
+nav li a:hover::after {
+  bottom: -3px; /* Pushes the pseudo-element down by the thickness of the border */
+}
+.x {
+  text-align: center;
+  align-items: center;
+}
+/* Add this CSS to your existing styles.css or in a style block within your HTML head */
+.excerpt img {
+  max-width: 100%;
+  height: auto;
+}
